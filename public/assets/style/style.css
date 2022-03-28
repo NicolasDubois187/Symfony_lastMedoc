@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.flex {
+    display: flex;
+}
+.around {
+    justify-content: space-around;
+}
+.align {
+    align-items: center;
+}
+nav {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #5eb5e0;
+}
+nav img {
+    max-width: 30%;
+}
+
+.article {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    border: solid 1px black;
+
+}
+.article img {
+    max-width: 30%;
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog index{% endblock %}
+
+{% block body %}
+    <section class="index">
+
+        <h1>Mes articles de blog</h1>
+        {% for blog in blogs %}
+            <article class="article">
+                <h2>{{ blog.title }}</h2>
+                {% if blog.img is null %}
+                    dsl pas d'image
+                {% else %}
+                    <img src="{{ asset('upload_directory/' ~ blog.img) }}" alt="{{ blog.title }}">
+                {% endif %}
+                    <span>Publié le {{ blog.date|date("d/m/y") }}</span>
+                    <p>
+                        {{ blog.txt }}
+                    </p>
+                    <span>
+                        <a href="{{ path('app_blog_show', {'id' : blog.id}) }}">Edit</a>
+                        <a href="{{ path('app_blog_edit', {'id': blog.id}) }}">Modifier</a>
+                    </span>
+            </article>
+        {% endfor %}
+        <a href="{{ path('app_blog_new') }}">Publier un nouveau blog</a>
+    </section>
+
+{% endblock %}
